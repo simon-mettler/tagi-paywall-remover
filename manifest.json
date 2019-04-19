@@ -1,0 +1,33 @@
+{
+  "name": "Tagesanzeiger Paywall Remover",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Entfernt die Abo+ Paywall auf tagesanzeiger.ch",
+  "homepage_url": "https://github.com/simon-mettler/tagi-paywall-remover",
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "src/bg/background.js"
+    ],
+    "persistent": true
+  },
+  "page_action": {
+    "default_icon": "icons/icon128.png",
+    "default_title": "Tagesanzeiger Paywall Remover",
+    "default_popup": "src/page_action/page_action.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.tagesanzeiger.ch/*",
+        "https://blog.tagesanzeiger.ch/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
