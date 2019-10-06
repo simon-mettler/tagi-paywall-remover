@@ -11,27 +11,27 @@ chrome.extension.sendMessage({}, function(response) {
 
         content.classList.remove('modal-open');
 
-        var overlay = document.querySelector('#overlay_wrap');
-        var target = document.querySelector('#topNav');
+        var overlay = document.querySelector('#tamovl-page-wrap');
+        var target = document.querySelector('#article');
         var div = document.createElement('div');
 
         overlay.style.display = 'none'; 
         div.innerHTML = 'Paywall removed!';
-        div.style.background = '#25a4c4';
+        div.style.background = 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)';
         div.style.color = 'white';
         div.style.borderRadius = '5px';
-        div.style.padding = '20px';
-        div.style.margin = '25px 0 25px 0';
+        div.style.padding = '50px';
+        div.style.margin = '25px 0';
         div.style.textAlign = 'center';
         div.style.fontFamily = 'sans-serif';
         div.style.width = '100%';
         target.parentNode.insertBefore( div, target );
 
-        console.log('Paywall removed!');
+        console.log('=============== Paywall removed! ===============');
 
       } else {
     
-        console.log('No Paywall to remove...')
+        console.log('=============== No Paywall to remove...===============')
 
       }
 
