@@ -7,11 +7,12 @@ chrome.extension.sendMessage({}, function(response) {
     
       var content = document.getElementsByTagName('body')[0];
 
-      if (content.classList.contains('modal-open')) {
+      if (content.classList.contains('h-disable-scroll')) {
 
-        content.classList.remove('modal-open');
+        content.classList.remove('h-disable-scroll');
+        content.classList.remove('o-tamedia-wrapper');
 
-        var overlay = document.querySelector('#tamovl-page-wrap');
+        var overlay = document.querySelector('.o-tamedia-wrapper');
         var target = document.querySelector('#article');
         var div = document.createElement('div');
 
