@@ -26,7 +26,7 @@ chrome.extension.sendMessage({}, function(response) {
         div.style.textAlign = 'center';
         div.style.fontFamily = 'sans-serif';
         div.style.width = '100%';
-        target.parentNode.insertBefore( div, target );
+        if( target ) {target.parentNode.insertBefore( div, target )};
 
         console.log('=============== Paywall removed! ===============');
 
